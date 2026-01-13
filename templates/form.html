@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include "flash.html" %}
+{% if result %}
+    <div class="result">
+		<p>Message initial: {{msg}}</p>
+        <p>Vous souhaitiez un {{crypttype}} avec un shift de {{shift}}.</p>
+        <p>Le resultat est : {{ result }}</p>
+    </div>
+
+
+{% endif %}
+
+<form action="/form" method="post">
+    
+    <label for="message">Message : </label>
+    <textarea id="message" name="message" placeholder="{{msg}}" ></textarea>
+
+
+    <label for="chiffrement">Chiffrement <input type="radio" id="chiffrement" name="crypttype" value="chiffrement" checked /></label>
+    
+
+    <label for="dechiffrement">Déchiffrement <input type="radio" id="dechiffrement" name="crypttype" value="dechiffrement" /></label>
+    
+
+    <label for="shift">Indiquez le shift souhaité : </label>
+    <input class="radio" type="text" id="shift" name="shift" placeholder="{{shift}}"/>
+
+    <button type="submit">Envoyer</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+créer une application qui permet de déchiffrer / chiffrer un message via code césar (fourni par l'enseignant).
+il faut que l'app ait un formulaire, dont les champs sont  :
+
+- message à traiter
+- chiffrement ou déchiffrement
+- shift pour le (dé)chiffrement
+
