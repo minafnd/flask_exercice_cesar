@@ -3,7 +3,7 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Date création</th>
                 <th>Action</th>
                 <th>Message original</th>
                 <th>Clé</th>
@@ -13,7 +13,7 @@
         <tbody>
             {% for entry in entries %}
             <tr>
-                <td>{{entry.id}}</td>
+                <td>{{entry.created_at.strftime("%d/%m/%Y à %Hh%M")}}</td>
                 <td>{{entry.action}}</td>
                 <td>{{entry.message}}</td>
                 <td>{{entry.key}}</td>

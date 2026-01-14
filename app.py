@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__) 
 app.secret_key = "supersecretkey"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/cesar'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -13,7 +13,7 @@ class HistoryEntry(db.Model):
     __tablename__ = 'history'
 
     id = db.Column(db.Integer, primary_key=True)
-    action = db.Column(db.String(10), nullable=False)
+    action = db.Column(db.String(100), nullable=False)
     message = db.Column(db.Text, nullable=False)
     key = db.Column(db.Integer, nullable=False)
     result = db.Column(db.Text, nullable=False)
