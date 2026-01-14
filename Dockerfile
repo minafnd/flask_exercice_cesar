@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir gunicorn
 EXPOSE 8000
 
 # docker va lancer la commande qui va générer les workers qui vont gérer les requêtes
-CMD ["gunicorn", "w", "2", "-b", "0.0.0.0.8000", "app:app"]
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8000", "app:app"]
