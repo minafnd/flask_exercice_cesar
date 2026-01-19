@@ -67,7 +67,7 @@ body {
     color: #666;
 }
 
-.result {
+.success {
     color :rgb(22, 21, 21);
     background-color: rgb(218, 245, 218);
     text-align: center;
@@ -95,4 +95,16 @@ label{
 }
 .radio{
     display: inline;
+ }
+.btn_history{
+    margin-top: 20px;
+}
+ .button{
+    border: solid black;
+    background-color: pink;
+    padding: 5px;
+ }
+
+ .button::hover{
+    background-color: purple;
  }

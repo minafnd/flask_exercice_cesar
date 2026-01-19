@@ -1,5 +1,5 @@
 from cesar import cesar, decesar
-from flask import Flask, request, render_template, redirect, flash
+from flask import Flask, request, render_template, redirect, flash, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__) 
@@ -72,6 +72,17 @@ def history():
     entries = HistoryEntry.query.all()
     return render_template("history.html", entries=entries)
 
+
+@app.route("/delete-history/<int:entry_id>")
+def delete_history(entry_id):
+    entry = HistoryEntry.query.get(entry_id)
+    if not entry:
+        flash("Entrée d'historique non trouvée", "error")
+        return redirect(url_for("history"))
+    db.session.delete(entry)
+    db.session.commit()
+    flash("Entrée d'historique supprimée avec succès", "success")
+    return redirect(url_for("history"))
 
 if __name__ == "__main__":
     app.run(debug=True)

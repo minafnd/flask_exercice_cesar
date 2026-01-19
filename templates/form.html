@@ -3,7 +3,7 @@
 
 {% include "flash.html" %}
 {% if result %}
-    <div class="result">
+    <div class="success">
 		<p>Message initial: {{msg}}</p>
         <p>Vous souhaitiez un {{crypttype}} avec un shift de {{shift}}.</p>
         <p>Le resultat est : {{ result }}</p>
@@ -29,5 +29,9 @@
 
     <button type="submit">Envoyer</button>
 </form>
+
+<div class="btn_history">
+    <a class="button" href="/history">Accéder à l'historique</a>
+</div>
 
 {% endblock %}
